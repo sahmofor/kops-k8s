@@ -114,7 +114,7 @@ You Created. --> Save.
 
 # 11) connect to the master node
     sh -i ~/.ssh/id_rsa ubuntu@ipAddress
-    ssh -i ~/.ssh/id_rsa ubuntu@18.212.35.71
+    ssh -i ~/.ssh/id_rsa ubuntu@44.202.109.24
     ssh -i ~/.ssh/id_rsa ubuntu@172.20.47.189
 
 ## 11b.  Enable PasswordAuthentication in the master server and assign passwd
