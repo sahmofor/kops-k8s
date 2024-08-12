@@ -75,9 +75,24 @@ You Created. --> Save.
 
 8)Create kubernetes cluster definitions on S3 bucket
 	
-	 kops create cluster --zones us-east-2a --networking calico --control-plane-size t2.medium --control-plane-count 1 --node-size t2.medium --node-count=2 ${NAME}
 
-	kops create secret --name ${NAME} sshpublickey admin -i ~/.ssh/id_rsa.pub
+kops create cluster --zones us-east-2a --networking calico --control-plane-size t2.medium --control-plane-count 1 --node-size t2.medium --node-count=2 ${NAME}
+
+OR USE THE BELOW COMMAND 
+
+kops create cluster \
+  --name=class28.k8s.local \
+  --state=s3://class28kops \
+  --zones=us-east-2a \
+  --node-count=2 \
+  --node-size=t2.medium \
+  --master-size=t2.medium
+
+
+# Copy the public key.
+
+
+kops create secret --name ${NAME} sshpublickey admin -i ~/.ssh/id_rsa.pub
 
 9) Create kubernetes cluser
 
